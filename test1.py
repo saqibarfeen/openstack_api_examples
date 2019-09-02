@@ -20,22 +20,18 @@ cc=cloudkitty_client.Client(1,session=sess)
 
 p(cc.report.get_summary(groupby=['res_type']))
 
-
-
-
 #nova api
 from novaclient import client as nova_client
 nova=nova_client.Client(2,session=sess)
 nova.servers.list()
 
 
+#create network
 
+{'gateway_ip': '1.9.9.1', 'name': 'sub1', 'ip_version': '4', 'cidr': '1.9.9.0/24', 'network_id': 'eec3c47e-d33a-4134-aa10-483dbca2e548'}
 
-#gnocchi
-from gnocchiclient import client as gnocchi_client
-g=gnocchi_client.Client(1,session=sess)
-pp(dir(g))
-
-
-
-
+import openstack
+flavor_data={'disk': 20, 'ephemeral_gb': 0, 'is_public': True, 'name': 'zxcsddsf', 'price': 0, 'ram': 1024, 'rxtx_factor': 1, 'swap': 0, 'vcpus': 2}
+d={'auth_url': 'http://10.81.1.80:5000/v3', 'domain_name': 'Default', 'password': '51d8ca1d90ec46dd', 'project_name': 'admin', 'username': 'admin'}
+conn=openstack.connect(**d)
+connection.compute.create_flavor(**flavor_data)
