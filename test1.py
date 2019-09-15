@@ -20,6 +20,14 @@ cc=cloudkitty_client.Client(1,session=sess)
 
 p(cc.report.get_summary(groupby=['res_type']))
 
+
+
+#gnocchi
+from gnocchiclient import client as cloudkitty_client
+cc=gnocchi_client.Client(1,session=sess)
+
+
+
 #nova api
 from novaclient import client as nova_client
 nova=nova_client.Client(2,session=sess)
