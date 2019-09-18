@@ -23,8 +23,8 @@ p(cc.report.get_summary(groupby=['res_type']))
 
 
 #gnocchi
-from gnocchiclient import client as cloudkitty_client
-cc=gnocchi_client.Client(1,session=sess)
+from gnocchiclient import client as gnocchi_client
+g=gnocchi_client.Client(1,session=sess)
 
 
 
