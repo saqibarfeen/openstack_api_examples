@@ -31,3 +31,7 @@ z=`cloudkitty hashmap field create $y flavor_id | grep flavor_id | awk '{print $
  --field-id $z \
  --value 1 \
  -t flat
+
+
+x=`cloudkitty hashmap service create volume.size | grep volume.size | awk '{print $4}' `
+y=`cloudkitty hashmap mapping create 5 --service-id $x
